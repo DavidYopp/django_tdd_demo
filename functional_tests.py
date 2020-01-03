@@ -38,19 +38,27 @@ class NewVisitorTest(unittest.TestCase):
 
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
-        self.assertTrue(
-            any(row.text == '1: Buy peacock feathers' for row in rows),
-            "New to-do item did not appear in table"
-        )
+        self.assertIn('1: Buy peacock feathers', [row.text for row in rows])
 
         # textbox to enter another item is still on teh page so user enters:
         # use the feathers to make a fly for fly fishing
-        self.fail('Everything else passed! Success!! now ... FINISH THE TEST!!')
+        inputbox = self.browser.find_element_by_id('id_new_item')
+        inputbox.send_keys('Use peacock feathers to make a fly')
+        inputbox.send_keys(Keys.ENTER)
+        time.sleep(1)
 
         # page updates and the todo item list now shows both items
+        table = self.browser.find_element_by_id('id_list_table')
+        rows = table.find_elements_by_tag_name('tr')
+        self.assertIn('1: Buy peacock feathers', [row.text for row in rows])
+        self.assertIn(
+            '2: Use peacock feathers to make a fly',
+            [row.text for row in rows]
+        )
 
         # user wonders if the site will remember her list and sees that the site generated
         # a unique url for them --there is explanatory text that reflects this
+        self.fail('Everything else passed! Success!! now ... FINISH THE TEST!!')
 
         # user visits the unique url and their todo list is there
 
