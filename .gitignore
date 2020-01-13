@@ -9,3 +9,4 @@ geckodriver-v0.24.0-linux64.tar.gz
 pyvenv.cfg
 __pycache__
 *.pyc
+/static
