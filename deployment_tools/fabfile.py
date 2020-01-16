@@ -4,6 +4,8 @@ from fabric.api import cd, env, local, run
 
 REPO_URL = 'https://github.com/Gdraven99/django_tdd_demo.git'
 
+env.key_filename = '/home/josh/Django_TDD_Instance.pem'
+
 
 def _get_latest_source():
     if exists('.git'):
@@ -35,7 +37,7 @@ def _update_static_files():
     run('./django_tdd_venv/bin/python manage.py collectstatic --noinput')
 
 def _update_database():
-    run('_/django_tdd_venv/bin/python manage.py migrate --noinput')
+    run('./django_tdd_venv/bin/python manage.py migrate --noinput')
 
 
 def deploy():
