@@ -41,7 +41,7 @@ def _update_database():
 
 
 def deploy():
-    site_folder = f'/home/josh/sites/{env.host}'
+    site_folder = f'/home/{env.user}/sites/{env.host}'
     run(f'mkdir -p {site_folder}')
     with cd(site_folder):
         _get_latest_source()
