@@ -40,4 +40,3 @@ Assume we have a user account at /home/username
          ├── .env
          ├── db.sqlite3
          ├── etc
-
