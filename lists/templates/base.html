@@ -13,6 +13,17 @@
   <body>
     <div class="container">
 
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <a class="navabr-brand" href="/">NotJoshinYa Lists</a>
+          <form class="navbar-form navbar-right" action="#" method="post">
+            <span>Enter email to log in:</span>
+            <input class="form-control" type="text" name="email" />
+            {% csrf_token %}
+          </form>
+        </div>
+      </nav>
+
       <div class="row justify-content-center">
         <div class="col-6 jumbotron">
           <div class="text-center">
