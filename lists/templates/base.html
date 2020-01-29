@@ -13,14 +13,21 @@
   <body>
     <div class="container">
 
-      <nav class="navbar navbar-default" role="navigation">
+      <nav class="navbar navbar-light bg-light" role="navigation">
         <div class="container-fluid">
-          <a class="navabr-brand" href="/">NotJoshinYa Lists</a>
-          <form class="navbar-form navbar-right" action="{% url 'send_login_email' %}" method="POST">
-            <span>Enter email to log in:</span>
-            <input class="form-control" type="text" name="email" />
-            {% csrf_token %}
-          </form>
+          <a class="navbar-brand" href="/">NotJoshinYa Lists</a>
+          {% if user.email %}
+            <ul class="nav navbar-nav navbar-right">
+              <li class="navbar-text">Logged in as {{ user.email }}</li>
+              <li><a href="#">Log out</a></li>
+            </ul>
+          {% else %}
+            <form class="navbar-form navbar-right" action="{% url 'send_login_email' %}" method="POST">
+              <span>Enter email to log in:</span>
+              <input class="form-control" type="text" name="email" />
+              {% csrf_token %}
+            </form>
+          {% endif %}
         </div>
       </nav>
 
