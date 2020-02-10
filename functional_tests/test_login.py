@@ -33,6 +33,7 @@ class LoginTest(FunctionalTest):
         ))
 
         # user checks their email and finds a message
+        time.sleep(10)
         body = self.wait_for_email(test_email, SUBJECT)
 
         # there is a url link in the Email
