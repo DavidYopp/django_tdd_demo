@@ -29,7 +29,7 @@ class MyListsTest(FunctionalTest) :
 
         #user goes to homepage and starts a list
         self.browser.get(self.live_server_url)
-        self.add_list_item('Reticulated splines')
+        self.add_list_item('Reticulating splines')
         self.add_list_item('articulating splines')
         first_list_url = self.browser.current_url
 
