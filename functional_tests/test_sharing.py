@@ -40,7 +40,7 @@ class SharingTest(FunctionalTest):
         list_page.share_list_with('example2@user.com')
 
         # example2@suer.com goes to the lists page
-        self.browser = oni_browser
+        self.browser = user2_browser
         MyListsPage(self).go_to_my_lists_page()
 
         # example2@user.com sees example@user's list in list there!
