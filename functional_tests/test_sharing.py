@@ -16,7 +16,7 @@ class SharingTest(FunctionalTest):
     def test_can_share_list_with_another_user(self):
         # example@user.com is a logged in user
         self.create_pre_authenticated_session('example@user.com')
-        time.sleep(10)
+        time.sleep(20)
         user_browser = self.browser
         self.addCleanup(lambda: quit_if_possible(user_browser))
 
