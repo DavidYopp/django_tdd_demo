@@ -8,6 +8,7 @@ from selenium.common.exceptions import WebDriverException
 from django.conf import settings
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from .server_tools import reset_database
+from .server_tools import create_session_on_server
 from .management.commands.create_session import create_pre_authenticated_session
 
 
