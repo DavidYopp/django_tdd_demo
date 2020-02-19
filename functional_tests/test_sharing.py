@@ -7,7 +7,6 @@ from .my_lists_page import MyListsPage
 
 def quit_if_possible(browser):
     try:
-        time.sleep(5)
         browser.quit()
     except: pass
 
