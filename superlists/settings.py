@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'lists',
     'accounts',
     'functional_tests',
-    'django_nose',
+    # 'django_nose',
 ]
 
 # Use django nose to run tests
