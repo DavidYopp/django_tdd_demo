@@ -21,6 +21,7 @@ class SharingTest(FunctionalTest):
         self.addCleanup(lambda: quit_if_possible(user_browser))
 
         # a friend of example user name example2 is also on the site
+        time.sleep(15)
         user2_browser = webdriver.Firefox()
         self.addCleanup(lambda: quit_if_possible(user2_browser))
         self.browser = user2_browser
