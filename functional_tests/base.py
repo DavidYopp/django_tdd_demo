@@ -16,12 +16,8 @@ SCREEN_DUMP_LOCATION = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), 'screendumps'
 )
 
-MAX_WAIT = 20
+MAX_WAIT = 30
 
-def quit_if_possible(browser):
-    try:
-        browser.quit()
-    except: pass
 
 def wait(fn):
     def modified_fn(*args, **kwargs):
@@ -39,7 +35,6 @@ def wait(fn):
 class FunctionalTest(StaticLiveServerTestCase):
 
     def setUp(self):
-        self.addCleanup(lambda: quit_if_possible(self.browser))
         self.browser = webdriver.Firefox()
         self.staging_server = os.environ.get('STAGING_SERVER')
         if self.staging_server:
