@@ -18,6 +18,10 @@ SCREEN_DUMP_LOCATION = os.path.join(
 
 MAX_WAIT = 20
 
+def quit_if_possible(browser):
+    try:
+        browser.quit()
+    except: pass
 
 def wait(fn):
     def modified_fn(*args, **kwargs):
@@ -35,6 +39,7 @@ def wait(fn):
 class FunctionalTest(StaticLiveServerTestCase):
 
     def setUp(self):
+        self.addCleanup(lambda: quit_if_possible(self.browser))
         self.browser = webdriver.Firefox()
         self.staging_server = os.environ.get('STAGING_SERVER')
         if self.staging_server:
