@@ -9,7 +9,10 @@ from .my_lists_page import MyListsPage
 def quit_if_possible(browser):
     try:
         browser.quit()
-    except: pass
+    except Exception as e:
+        print("******!!!||Heres the Exception||!!!******")
+        print(e)
+        pass
 
 
 class SharingTest(FunctionalTest):

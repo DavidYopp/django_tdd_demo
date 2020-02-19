@@ -45,7 +45,17 @@ INSTALLED_APPS = [
     'lists',
     'accounts',
     'functional_tests',
+    'django_nose',
 ]
+
+# Use django nose to run tests
+# TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Tell Nose what apps to measure coverage on
+# NOSE_ARGS = [
+#     '--with-coverage',
+#     '--cover-package=lists,accounts'
+# ]
 
 AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = [
